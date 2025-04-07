@@ -21,5 +21,15 @@ namespace Andrade_LigaPro.Models
         public int partidosEmpatados { get; set; }
 
 
+        public int Puntos //Esta propiedad ayuda a calcular los puntos
+        {
+            get
+            {
+                return (partidosGanados * 3) + (partidosEmpatados * 1);
+            }
+        }
+
+
+
     }
 }

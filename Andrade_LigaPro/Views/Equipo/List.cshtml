@@ -30,6 +30,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.partidosEmpatados)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Puntos)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -53,6 +56,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.partidosEmpatados)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Puntos)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
