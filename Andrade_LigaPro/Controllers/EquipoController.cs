@@ -18,11 +18,13 @@ namespace Andrade_LigaPro.Controllers
             var equipos = equipoRepository.DevuelveListadoEquipo();
 
             equipos = equipos.OrderByDescending(item => item.Puntos);
-            // equipos = equipos.Where(item => item.Nombre == "Liga de Quito");
+         
 
 
             return View(equipos);
         }
+
+
 
 
     }

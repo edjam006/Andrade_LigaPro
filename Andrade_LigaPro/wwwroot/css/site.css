@@ -12,10 +12,13 @@ html {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-h1{
-    text-align:center;
+h1 {
+    text-align: center;
     color: black;
     font-weight: bold;
+    font-family: sans-serif;
+    font-style:italic;
+    font-size:800%;
 }
 
 html {
@@ -43,6 +46,22 @@ body {
     margin: 30px auto;
     max-width: 95%;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.documentosPDF {
+    display: block; /* Transformar los pdf como un bloque el cual si se puede centrar, ayuda de gpt */
+    align-items: center;
+    background-color: gray;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 95%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+h2{
+    text-align: center;
 }
 
 
