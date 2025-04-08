@@ -1,80 +1,82 @@
 ﻿@model IEnumerable<Andrade_LigaPro.Models.equipo>
 
 @{
-    ViewData["Title"] = "List";
+    ViewData["Title"] = "Tabla de Posiciones";
 }
 
-<h1>List</h1>
+<h1>Tabla de Posiciones</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.partidosGanados)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.partidosJugados)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.partidosPerdidos)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.partidosEmpatados)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Puntos)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.partidosGanados)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.partidosJugados)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.partidosPerdidos)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.partidosEmpatados)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Puntos)
-            </td>
 
-            <!-- La sintaxis de ambos botones recibi ayuda de gpt para poder hacer que con el click llamen al modal y el modelo del boton es de bootstrap -->
-            <td>
-                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#informacionModal">Información</button> 
+<div class="tablaEstilo">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.partidosGanados)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.partidosJugados)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.partidosPerdidos)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.partidosEmpatados)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Puntos)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                        <img src="~/images/@($"{item.Id}.png")" alt="Logo @item.Nombre" style="height: 50px;" /> <!--  -->
 
-            </td>
-            <td>
-                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#equipoModal">Actualizar Datos</button>
+                </td>
 
-            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.partidosGanados)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.partidosJugados)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.partidosPerdidos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.partidosEmpatados)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Puntos)
+                </td>
+
+                <!-- La sintaxis de ambos botones recibi ayuda de gpt para poder hacer que con el click llamen al modal y el modelo del boton es de bootstrap -->
+                <td>
+                    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#informacionModal">Información</button> 
+
+                </td>
+                <td>
+                    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#equipoModal">Actualizar Datos</button>
+
+                </td>
             
-        </tr>
-}
-    </tbody>
-</table>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>
 
 <!-- Ventana Emergente para la informacion de los equipos -->
 <div class="modal" id="informacionModal" tabindex="-1">
