@@ -60,12 +60,105 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Puntos)
             </td>
+
+            <!-- La sintaxis de ambos botones recibi ayuda de gpt para poder hacer que con el click llamen al modal y el modelo del boton es de bootstrap -->
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#informacionModal">Información</button> 
+
             </td>
+            <td>
+                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#equipoModal">Actualizar Datos</button>
+
+            </td>
+            
         </tr>
 }
     </tbody>
 </table>
+
+<!-- Ventana Emergente para la informacion de los equipos -->
+<div class="modal" id="informacionModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal y formulario hecho con base a un modelo de bootstrap -->
+<!-- Ventana Emergente para la Actualizacion de la tabla -->
+
+<div class="modal fade" id="equipoModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Actualizar información del equipo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <!-- Menu desplegable de seleccion con bootstrap -->
+                        <label class="form-label">Seleccionar equipo</label>
+                        <select class="form-select">
+                            <option selected disabled>-- Selecciona un equipo --</option> 
+                            <option value="1">Liga de Quito</option>
+                            <option value="2">Barcelona Sporting Club</option>
+                            <option value="3">Universidad Católica</option>
+                            <option value="4">Emelec</option>
+                            <option value="5">Independiente del Valle</option>
+                            <option value="6">Cuniburo Futbol Club</option>
+                            <option value="7">Libertad Futbol Club</option>
+                            <option value="8">Orense</option>
+                            <option value="9">Mushuc Runa</option>
+                            <option value="10">Aucas</option>
+                            <option value="11">Macara</option>
+                            <option value="12">Deportivo Cuenca</option>
+                            <option value="13">Manta</option>
+                            <option value="14">Tecnico Universitario</option>
+                            <option value="15">El Nacional</option>
+                            <option value="16">Delfin</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Partidos Jugados</label>
+                        <input type="number" class="form-control" max="32" />
+                        
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Partidos Ganados</label>
+                        <input type="number" class="form-control" max="32" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Partidos Empatados</label>
+                        <input type="number" class="form-control" max="32" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Partidos Perdidos</label>
+                        <input type="number" class="form-control" max="32" />
+                    </div>
+
+                    <div class="alert alert-info">Puntos: 0</div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
+
