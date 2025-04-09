@@ -20,7 +20,7 @@ namespace Andrade_LigaPro.Controllers
         public ActionResult List()
         {
           
-            var equipos = _repository.DevuelveListadoEquipo();
+            var equipos = _repository.DevuelveListadoEquipos();
 
             equipos = equipos.OrderByDescending(item => item.Puntos);
          
@@ -35,9 +35,15 @@ namespace Andrade_LigaPro.Controllers
             try
             {
                 //Proceso de Guardado
-
-                _repository.ActualizarEquipo(Id, Equipo);
-                return RedirectToAction(nameof(List));
+                bool actualizado = _repository.ActualizarEquipo(Id, Equipo); //Equipo es el objeto nuevo actualizado como se designo en el repositorio y se indica el id  
+                
+                
+                if(actualizado){
+                    return RedirectToAction(nameof(List)); //Si  el metodo da true significa que se actualizo correctamente y se redirige a la vista normal
+                }
+                else {
+                    return NotFound(); //Si no encuentra el ID retorna error 404
+                }
             }
             catch
             {

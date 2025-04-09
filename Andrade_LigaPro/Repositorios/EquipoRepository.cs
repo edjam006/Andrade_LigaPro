@@ -5,11 +5,14 @@ namespace Andrade_LigaPro.Repositorios
     public class EquipoRepository
     {
 
-        public IEnumerable<equipo> Equipos;
+        public static List<equipo> Equipos = new List<equipo>();
 
         public EquipoRepository()
         {
-            Equipos = DevuelveListadoEquipo();
+            if (Equipos.Count == 0)
+            {
+                Equipos = DevuelveListadoEquipo().ToList(); //Esta sugerencia de if me dio chat gpt debido a que no se me estaba actualizando la tabla, y se pone la condicion para saber si no se ha inicialziado, probar los datos, y garantizar que los datos se carguen una vez y se evita que se sobreescriba o suplante algo
+            }
         }
         public IEnumerable<equipo> DevuelveListadoEquipo()
         {
@@ -207,14 +210,12 @@ namespace Andrade_LigaPro.Repositorios
             equipos.Add(nac);
 
 
-
-
-
-
-
-
-
             return equipos;
+        }
+
+        public IEnumerable<equipo> DevuelveListadoEquipos()
+        {
+            return Equipos;
         }
 
         public equipo DevuelveEquipoPorID(int Id)
@@ -225,10 +226,23 @@ namespace Andrade_LigaPro.Repositorios
             return Equipo;
         }
 
+
         public bool ActualizarEquipo(int Id, equipo Equipo)
         {
-            //logic
+            
+            var equipoExistente = Equipos.First(item => item.Id == Id); 
+            if (equipoExistente == null)
+            {
+                return false;
+            } 
+
+            equipoExistente.partidosJugados = Equipo.partidosJugados; //Estas lineas asignan a los datos del equipo actual el nuevo valor ingresados 
+            equipoExistente.partidosGanados = Equipo.partidosGanados;
+            equipoExistente.partidosEmpatados = Equipo.partidosEmpatados;
+            equipoExistente.partidosPerdidos = Equipo.partidosPerdidos;
+
             return true;
+            
         }
 
     }

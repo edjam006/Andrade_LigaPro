@@ -6,18 +6,24 @@ namespace Andrade_LigaPro.Models
     public class equipo
     {
         [Key]
+        [Display(Name = "")]
         public int Id { get; set; }
         [Required]
         [MaxLength(100)]
         [DisplayName("Nombre del equipo")]
         public String Nombre { get; set; }
         [Range(0,100)]
+        [Display(Name = "Partidos Ganados")]
         public int partidosGanados { get; set; }
         [Range(0, 100)]
+        [Display(Name = "Partidos Jugados")]
         public int partidosJugados { get; set; }
         [Range(0, 100)]
+        [Display(Name = "Partidos Perdidos")]
         public int partidosPerdidos { get; set; }
         [Range(0, 100)]
+
+        [Display(Name = "Partidos Empatados")]
         public int partidosEmpatados { get; set; }
 
 

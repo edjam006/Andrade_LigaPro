@@ -62,39 +62,19 @@
                     @Html.DisplayFor(modelItem => item.Puntos)
                 </td>
 
-                <!-- La sintaxis de ambos botones recibi ayuda de gpt para poder hacer que con el click llamen al modal y el modelo del boton es de bootstrap -->
+                <!-- La sintaxis del boton recibi ayuda de gpt para poder hacer que con el click llamen al modal y el modelo del boton es de bootstrap -->  
+                
                 <td>
-                    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#informacionModal">Información</button> 
+                    <button type="button" class="botonTabla " data-bs-toggle="modal" data-bs-target="#equipoModal">Actualizar </button>
 
                 </td>
-                <td>
-                    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#equipoModal">Actualizar Datos</button>
-
-                </td>
-            
+                
             </tr>
     }
         </tbody>
     </table>
 </div>
 
-<!-- Ventana Emergente para la informacion de los equipos -->
-<div class="modal" id="informacionModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Modal body text goes here.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Modal y formulario hecho con base a un modelo de bootstrap -->
 <!-- Ventana Emergente para la Actualizacion de la tabla -->
@@ -107,59 +87,60 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form asp-action="Edit" asp-controller="equipo" method="post">
                     <div class="mb-3">
                         <!-- Menu desplegable de seleccion con bootstrap -->
                         <label class="form-label">Seleccionar equipo</label>
-                        <select class="form-select">
+                        <select class="form-select" name="Id" required>
                             <option selected disabled>-- Selecciona un equipo --</option> 
                             <option value="1">Liga de Quito</option>
                             <option value="2">Barcelona Sporting Club</option>
                             <option value="3">Universidad Católica</option>
-                            <option value="4">Emelec</option>
-                            <option value="5">Independiente del Valle</option>
-                            <option value="6">Cuniburo Futbol Club</option>
-                            <option value="7">Libertad Futbol Club</option>
-                            <option value="8">Orense</option>
-                            <option value="9">Mushuc Runa</option>
-                            <option value="10">Aucas</option>
-                            <option value="11">Macara</option>
-                            <option value="12">Deportivo Cuenca</option>
-                            <option value="13">Manta</option>
-                            <option value="14">Tecnico Universitario</option>
-                            <option value="15">El Nacional</option>
-                            <option value="16">Delfin</option>
+                            <option value="4">Independiente del Valle</option>
+                            <option value="5">Cuniburo Futbol Club</option>
+                            <option value="6">Libertad Futbol Club</option>
+                            <option value="7">Orense</option>
+                            <option value="8">Mushuc Runa</option>
+                            <option value="9">Aucas</option>
+                            <option value="10">Macara</option>
+                            <option value="11">Deportivo Cuenca</option>
+                            <option value="12">Manta</option>
+                            <option value="13">Tecnico Universitario</option>
+                            <option value="14">Delfin</option>
+                            <option value="15">Emelec</option>
+                            <option value="16">El Nacional</option>
+                            
                         </select>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Partidos Jugados</label>
-                        <input type="number" class="form-control" max="32" />
+                        <input type="number" name="partidosJugados" class="form-control" max="32" />
                         
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Partidos Ganados</label>
-                        <input type="number" class="form-control" max="32" />
+                        <input type="number" name="partidosGanados" class="form-control" max="32" />
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Partidos Empatados</label>
-                        <input type="number" class="form-control" max="32" />
+                        <input type="number" name="partidosEmpatados" class="form-control" max="32" />
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Partidos Perdidos</label>
-                        <input type="number" class="form-control" max="32" />
+                        <input type="number" name="partidosPerdidos" class="form-control" max="32" />
                     </div>
 
-                    <div class="alert alert-info">Puntos: 0</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>  <!--Tuve que cambiar el footer dentro del formulario y ubicar el tipo submit ya que lo prestablecido en el bootstrap con el modal no me estaba funcionando -->
+                    </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Guardar Cambios</button>
-            </div>
+            
         </div>
     </div>
 </div>
