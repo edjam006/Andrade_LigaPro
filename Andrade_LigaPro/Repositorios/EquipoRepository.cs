@@ -4,6 +4,13 @@ namespace Andrade_LigaPro.Repositorios
 {
     public class EquipoRepository
     {
+
+        public IEnumerable<equipo> Equipos;
+
+        public EquipoRepository()
+        {
+            Equipos = DevuelveListadoEquipo();
+        }
         public IEnumerable<equipo> DevuelveListadoEquipo()
         {
             List<equipo> equipos = new List<equipo>();
@@ -208,6 +215,20 @@ namespace Andrade_LigaPro.Repositorios
 
 
             return equipos;
+        }
+
+        public equipo DevuelveEquipoPorID(int Id)
+        {
+            
+            var Equipo = Equipos.First(item=> item.Id == Id); //Devuelve el primer elemento que encuentre con ese ID
+
+            return Equipo;
+        }
+
+        public bool ActualizarEquipo(int Id, equipo Equipo)
+        {
+            //logic
+            return true;
         }
 
     }
