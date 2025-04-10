@@ -16,7 +16,7 @@ h1 {
     text-align: center;
     color: black;
     font-weight: bold;
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style:italic;
     font-size:800%;
 }
@@ -28,15 +28,15 @@ html {
 
 body {
     margin-bottom: 60px;
-    background-image: url('../images/background.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/background.jpg'); /*Linea de Codigo con la imagen del background y ademas el linear gradient para hacer mas opaca la imagen*/
     background-size: cover;
-
 }
 
 .carouselEstilo {
     max-width: 800px;
-    margin: 0 auto;
-    padding-top: 70px;
+    margin-left:auto;
+    margin-right:0px;
+    padding-top: 80px;
 }
 
 .tablaEstilo {
@@ -63,5 +63,29 @@ body {
 h2{
     text-align: center;
 }
+
+.headerEstilos {
+
+}
+
+.contenedorTexto {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-left: 80px; 
+    margin-top: 60px;
+}
+
+.contenedorIndex {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end; 
+    padding-top: 50px;
+    gap: 40px; 
+}
+
 
 
