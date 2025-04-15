@@ -53,12 +53,15 @@ body {
 
 .botonTabla {
     background-color: lightgoldenrodyellow;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 30px auto;
-    max-width: 95%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    text-align: center;
 }
 
 .documentosPDF {
@@ -93,6 +96,10 @@ h2 {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-left: 90px; 
     margin-top: 60px;
+}
+.centradoDescripcion {
+    margin: 0 auto;
+    margin-top: 80px;
 }
 
 .contenedorIndex {

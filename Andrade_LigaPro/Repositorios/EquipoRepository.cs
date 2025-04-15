@@ -1,4 +1,6 @@
 ﻿using Andrade_LigaPro.Models;
+using System.Text.Json;
+using System.IO;
 
 namespace Andrade_LigaPro.Repositorios
 {
@@ -11,7 +13,11 @@ namespace Andrade_LigaPro.Repositorios
         {
             if (Equipos.Count == 0)
             {
-                Equipos = DevuelveListadoEquipo().ToList(); //Esta sugerencia de if me dio chat gpt debido a que no se me estaba actualizando la tabla, y se pone la condicion para saber si no se ha inicialziado, probar los datos, y garantizar que los datos se carguen una vez y se evita que se sobreescriba o suplante algo
+                CargarDesdeJson(); // Carga los datos guardados del JSon si existen
+                if (Equipos.Count == 0)
+                {
+                    Equipos = DevuelveListadoEquipo().ToList(); // Se cargan valores por defecto si el JSON está vacío
+                }
             }
         }
         public IEnumerable<equipo> DevuelveListadoEquipo()
@@ -241,8 +247,28 @@ namespace Andrade_LigaPro.Repositorios
             equipoExistente.partidosEmpatados = Equipo.partidosEmpatados;
             equipoExistente.partidosPerdidos = Equipo.partidosPerdidos;
 
+            GuardarEnJson();
+
             return true;
             
+        }
+
+        //Para las funcionalidades con el archivo Json me ayude de GPT
+        private void CargarDesdeJson()
+        {
+            if (File.Exists("equipos.json"))
+            {
+                string json = File.ReadAllText("equipos.json");
+                var equiposDesdeArchivo = JsonSerializer.Deserialize<List<equipo>>(json); //Convierte el texto Json leido en una lista de objetos de tipo equipo
+                if (equiposDesdeArchivo != null)
+                    Equipos = equiposDesdeArchivo;
+            }
+        }
+
+        private void GuardarEnJson()
+        {
+            string json = JsonSerializer.Serialize(Equipos, new JsonSerializerOptions { WriteIndented = true }); //Hace que el Json se convierta a un formato legible
+            File.WriteAllText("equipos.json", json); //El WriteAllText escribe el contenido en el archivo 
         }
 
     }

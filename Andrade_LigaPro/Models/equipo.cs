@@ -26,6 +26,11 @@ namespace Andrade_LigaPro.Models
         [Display(Name = "Partidos Empatados")]
         public int partidosEmpatados { get; set; }
 
+        public String descripcion { get; set; }
+
+        [Display(Name = "Logo del Equipo")]
+        public String logo { get; set; }
+
 
         public int Puntos //Esta propiedad ayuda a calcular los puntos
         {

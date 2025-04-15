@@ -68,6 +68,10 @@
                     <button type="button" class="botonTabla " data-bs-toggle="modal" data-bs-target="#equipoModal">Actualizar </button>
 
                 </td>
+
+                <td>
+                        <a asp-action="Descripcion" asp-route-id="@item.Id" class="botonTabla">Descripción</a>  <!-- Redirige a la nueva vista de la Descripcion -->
+                </td>
                 
             </tr>
     }
@@ -78,6 +82,7 @@
 
 <!-- Modal y formulario hecho con base a un modelo de bootstrap -->
 <!-- Ventana Emergente para la Actualizacion de la tabla -->
+
 
 <div class="modal fade" id="equipoModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
     <div class="modal-dialog">

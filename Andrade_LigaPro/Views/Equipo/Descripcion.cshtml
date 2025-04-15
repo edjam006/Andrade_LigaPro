@@ -1,0 +1,15 @@
+﻿@model Andrade_LigaPro.Models.equipo
+
+@{
+    ViewData["Title"] = "Descripción del equipo";
+}
+<!--Sin poder comentar en el Json es importante mencionar que las descripciones de los equipos fueron proporcionadas por IA-->
+<div class="text-center mt-4 " >
+    <div class="contenedorTexto centradoDescripcion text-center"> <!-- GPT me sugirio crear la clase centrado Descripcion ya que queria reutilizar el contenedor hecho para la pagina de inicio pero este se iba justificado a la izquierda -->
+        <h2>@Model.Nombre</h2>
+        <img src="~/images/@Model.logo" alt="Logo @Model.Nombre" style="max-height: 150px;" class="mb-3" /> <!-- Muestra el logo del equipo seleccionado -->
+        <p class="lead">@Model.descripcion</p> <!-- Se llama a que se muestre la descripcion del modelo de equipo ya declarado -->
+
+        <a asp-action="List" class="botonTabla">Cerrar</a>
+    </div>
+</div>

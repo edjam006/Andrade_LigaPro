@@ -1,0 +1,178 @@
+[
+  {
+    "Id": 1,
+    "Nombre": "Liga de Quito",
+    "partidosGanados": 3,
+    "partidosJugados": 6,
+    "partidosPerdidos": 1,
+    "partidosEmpatados": 2,
+    "descripcion": "Club ecuatoriano con gran trayectoria y m\u00FAltiples t\u00EDtulos nacionales e internacionales.",
+    "logo": "1.png",
+    "Puntos": 11
+  },
+  {
+    "Id": 2,
+    "Nombre": "Barcelona Sporting Club",
+    "partidosGanados": 5,
+    "partidosJugados": 6,
+    "partidosPerdidos": 1,
+    "partidosEmpatados": 0,
+    "descripcion": "Equipo con m\u00E1s hinchas del pa\u00EDs, conocido por su historia y sus cl\u00E1sicos del Astillero.",
+    "logo": "2.png",
+    "Puntos": 15
+  },
+  {
+    "Id": 3,
+    "Nombre": "Universidad Catolica",
+    "partidosGanados": 3,
+    "partidosJugados": 7,
+    "partidosPerdidos": 1,
+    "partidosEmpatados": 3,
+    "descripcion": "Club acad\u00E9mico que combina talento joven con experiencia competitiva.",
+    "logo": "3.png",
+    "Puntos": 12
+  },
+  {
+    "Id": 4,
+    "Nombre": "Independiente del Valle",
+    "partidosGanados": 3,
+    "partidosJugados": 7,
+    "partidosPerdidos": 1,
+    "partidosEmpatados": 3,
+    "descripcion": "Referente en formaci\u00F3n juvenil y campe\u00F3n internacional con estilo de juego moderno.",
+    "logo": "4.png",
+    "Puntos": 12
+  },
+  {
+    "Id": 5,
+    "Nombre": "Cuniburo Futbol Club",
+    "partidosGanados": 3,
+    "partidosJugados": 7,
+    "partidosPerdidos": 1,
+    "partidosEmpatados": 3,
+    "descripcion": "Equipo emergente que busca consolidarse en la primera divisi\u00F3n del f\u00FAtbol ecuatoriano.",
+    "logo": "5.png",
+    "Puntos": 12
+  },
+  {
+    "Id": 6,
+    "Nombre": "Libertad Futbol Club",
+    "partidosGanados": 3,
+    "partidosJugados": 7,
+    "partidosPerdidos": 2,
+    "partidosEmpatados": 2,
+    "descripcion": "Club que representa al sur del pa\u00EDs con esp\u00EDritu competitivo y entrega en cada partido.",
+    "logo": "6.png",
+    "Puntos": 11
+  },
+  {
+    "Id": 7,
+    "Nombre": "Orense",
+    "partidosGanados": 3,
+    "partidosJugados": 7,
+    "partidosPerdidos": 3,
+    "partidosEmpatados": 1,
+    "descripcion": "Equipo de Machala con fuerte identidad regional y crecimiento en la Liga Pro.",
+    "logo": "7.png",
+    "Puntos": 10
+  },
+  {
+    "Id": 8,
+    "Nombre": "Mushuc Runa",
+    "partidosGanados": 2,
+    "partidosJugados": 7,
+    "partidosPerdidos": 2,
+    "partidosEmpatados": 3,
+    "descripcion": "El equipo ind\u00EDgena del Ecuador, s\u00EDmbolo de inclusi\u00F3n y lucha en el f\u00FAtbol nacional.",
+    "logo": "8.png",
+    "Puntos": 9
+  },
+  {
+    "Id": 9,
+    "Nombre": "Aucas",
+    "partidosGanados": 2,
+    "partidosJugados": 7,
+    "partidosPerdidos": 2,
+    "partidosEmpatados": 3,
+    "descripcion": "Pap\u00E1 Aucas, querido por su hinchada y uno de los hist\u00F3ricos clubes de Quito.",
+    "logo": "9.png",
+    "Puntos": 9
+  },
+  {
+    "Id": 10,
+    "Nombre": "Macara",
+    "partidosGanados": 2,
+    "partidosJugados": 7,
+    "partidosPerdidos": 2,
+    "partidosEmpatados": 3,
+    "descripcion": "Representante de Ambato con s\u00F3lida presencia en los \u00FAltimos torneos.",
+    "logo": "10.png",
+    "Puntos": 9
+  },
+  {
+    "Id": 11,
+    "Nombre": "Deportivo Cuenca",
+    "partidosGanados": 2,
+    "partidosJugados": 7,
+    "partidosPerdidos": 4,
+    "partidosEmpatados": 1,
+    "descripcion": "El \u0027Expreso Austral\u0027 con una fiel hinchada y tradici\u00F3n en el f\u00FAtbol ecuatoriano.",
+    "logo": "11.png",
+    "Puntos": 7
+  },
+  {
+    "Id": 12,
+    "Nombre": "Manta",
+    "partidosGanados": 1,
+    "partidosJugados": 7,
+    "partidosPerdidos": 3,
+    "partidosEmpatados": 3,
+    "descripcion": "Club coste\u00F1o con aspiraciones de volver a ser protagonista en torneos nacionales.",
+    "logo": "12.png",
+    "Puntos": 6
+  },
+  {
+    "Id": 13,
+    "Nombre": "Tecnico Universitario",
+    "partidosGanados": 1,
+    "partidosJugados": 7,
+    "partidosPerdidos": 3,
+    "partidosEmpatados": 3,
+    "descripcion": "Conocido como el \u0027Rodillo Rojo\u0027, es un tradicional equipo ambate\u00F1o de lucha constante.",
+    "logo": "13.png",
+    "Puntos": 6
+  },
+  {
+    "Id": 14,
+    "Nombre": "Delfin",
+    "partidosGanados": 23,
+    "partidosJugados": 32,
+    "partidosPerdidos": 7,
+    "partidosEmpatados": 2,
+    "descripcion": "Equipo manabita con importantes participaciones en copas internacionales.",
+    "logo": "14.png",
+    "Puntos": 71
+  },
+  {
+    "Id": 15,
+    "Nombre": "Emelec",
+    "partidosGanados": 1,
+    "partidosJugados": 7,
+    "partidosPerdidos": 3,
+    "partidosEmpatados": 3,
+    "descripcion": "Uno de los grandes del Ecuador, conocido por su cl\u00E1sico contra Barcelona y su historia.",
+    "logo": "15.png",
+    "Puntos": 6
+  },
+  {
+    "Id": 16,
+    "Nombre": "El Nacional",
+    "partidosGanados": 1,
+    "partidosJugados": 7,
+    "partidosPerdidos": 4,
+    "partidosEmpatados": 2,
+    "descripcion": "Club militar, cuna de grandes figuras del f\u00FAtbol ecuatoriano.",
+    "logo": "16.png",
+    "Puntos": 5
+  }
+]

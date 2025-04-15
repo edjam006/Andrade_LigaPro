@@ -52,6 +52,16 @@ namespace Andrade_LigaPro.Controllers
 
         }
 
+        public IActionResult Descripcion(int id)
+        {
+            var equipo = _repository.DevuelveEquipoPorID(id);  //Busca el equipo por el id y en el return envia la vista del equipo encontrado
+            if (equipo == null)
+            {
+                return NotFound();
+            }
+            return View(equipo);
+        }
+
 
 
 
