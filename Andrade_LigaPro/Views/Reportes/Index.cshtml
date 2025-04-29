@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "Reporte del Torneo";
+    var goleadores = ViewBag.TopGoleadores as List<Andrade_LigaPro.Models.Jugador>;
+    var asistentes = ViewBag.TopAsistencias as List<Andrade_LigaPro.Models.Jugador>;
+    var equipos = ViewBag.TopEquipos as List<Andrade_LigaPro.Models.equipo>;
+}
+
+<h2 class="text-center mt-4">Reporte del Torneo</h2>
+
+<h4>Top 5 Goleadores</h4>
+<table class="tablaEstilo width: auto">
+    <thead class="table-white">
+        <tr>
+            <th class="px-lg-5">Jugador</th>
+            <th class="px-lg-5">Equipo</th>
+            <th class="text-end px-lg-5">Goles</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var j in goleadores)
+        {
+            <tr>
+                <td>@j.Nombre</td>
+                <td>@j.Equipo?.Nombre</td>
+                <td class="text-end px-lg-5">@j.Goles</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h4>Top 5 Asistencias</h4>
+<table class="tablaEstilo">
+    <thead class="table-white">
+        <tr>
+            <th class="px-lg-5">Jugador</th>
+            <th class="px-lg-5">Equipo</th>
+            <th class="text-end px-lg-5">Asistencias</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+        <!--   aqui recorremos la lista de asistentes y muestra una fila por cada jugador con su nombre, equipo y número de asistencias -->
+        @foreach (var j in asistentes)
+        {
+            <tr >
+                <td>@j.Nombre</td>
+                <td>@j.Equipo?.Nombre</td>
+                <td class="text-end">@j.Asistencias</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h4>Top 5 Equipos por Presupuesto</h4>
+<table class="tablaEstilo">
+    <thead class="table-white">
+        <tr>
+            <th class="px-lg-5">Equipo</th>
+            <th class ="px-lg-5">Presupuesto</th> 
+        </tr>
+    </thead>
+    <tbody>
+        <!--  aqui se verificasi hay datos en TopPresupuesto y muestra la tabla equipo-presupuesto, si no hay datos, muestra el mensaje de no hay datos -->
+       
+        @if (ViewBag.TopPresupuesto != null)
+        {
+            foreach (var e in ViewBag.TopPresupuesto)
+            {
+                <tr>
+                    <td>@e.Nombre</td>
+                    <td class="text-end px-lg-5">@e.Puntos.ToString("C")</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr><td colspan="2">No hay datos disponibles</td></tr>
+        }
+
+    </tbody>
+</table>
