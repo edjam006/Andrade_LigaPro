@@ -3,6 +3,7 @@ using Andrade_LigaPro.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Andrade_LigaPro.Migrations
 {
     [DbContext(typeof(Andrade_LigaProContext))]
-    partial class Andrade_LigaProContextModelSnapshot : ModelSnapshot
+    [Migration("20250429151545_CrearTabla")]
+    partial class CrearTabla
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

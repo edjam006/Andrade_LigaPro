@@ -15,5 +15,6 @@ namespace Andrade_LigaPro.Data
         }
 
         public DbSet<Andrade_LigaPro.Models.equipo> equipo { get; set; } = default!;
+        public DbSet<Andrade_LigaPro.Models.Jugador> Jugador { get; set; } = default!;
     }
 }

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Andrade_LigaPro.Models.Jugador>
+
+@{
+    ViewData["Title"] = "Jugadores";
+}
+
+<h1 class="text-center mt-4">Listado de Jugadores</h1>
+
+<div class="mb-4 text-center">
+    <form method="get" class="d-inline-block">
+        <label for="equipoId" class="form-label">Filtrar por equipo:</label>
+        <!--Aqui se filtran los equipos, esto se llena desde el ViewBag Equipos y lo redirige a index pero por inicial se muestran todos los jugadores de todos los equipos -->
+        <!--Para lo de viewbag se utilizo ayuda de gpt porque no sabia como servia-->
+        <select name="equipoId" class="form-select d-inline-block w-auto" asp-items="ViewBag.Equipos">
+            <option value="">-- Todos --</option>
+        </select>
+        <button type="submit" class="btn btn-primary ms-2">Filtrar</button>
+        <a asp-action="Create" class="btn btn-success ms-2">Agregar Jugador</a>
+    </form>
+</div>
+
+<table class="tablaEstilo width: auto ">
+    <thead class="table-white">
+        <tr>
+            <th class="px-5">@Html.DisplayNameFor(model => model.First().Nombre)</th>
+            <th class="px-5">@Html.DisplayNameFor(model => model.First().NumeroCamiseta)</th>
+            <th class="px-5">@Html.DisplayNameFor(model => model.First().Goles)</th>
+            <th class="px-5">@Html.DisplayNameFor(model => model.First().Asistencias)</th>
+            <th class="px-5">@Html.DisplayNameFor(model => model.First().Sueldo)</th>
+            <th class="px-5">Equipo</th>
+            <th class="px-5">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@item.NumeroCamiseta</td>
+                <td>@item.Goles</td>
+                <td>@item.Asistencias</td>
+                <td>@item.Sueldo.ToString("C")</td>
+                <td>@item.Equipo?.Nombre</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Editar</a> <!-- Se usaron botones por defecto de bootstrap -->
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Detalles</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

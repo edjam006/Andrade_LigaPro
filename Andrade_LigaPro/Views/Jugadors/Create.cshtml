@@ -1,0 +1,52 @@
+﻿@model Andrade_LigaPro.Models.Jugador
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center">Crear Jugador</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Nombre" class="control-label"></label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NumeroCamiseta" class="control-label"></label>
+        <input asp-for="NumeroCamiseta" class="form-control" />
+        <span asp-validation-for="NumeroCamiseta" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Goles" class="control-label"></label>
+        <input asp-for="Goles" class="form-control" />
+        <span asp-validation-for="Goles" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Asistencias" class="control-label"></label>
+        <input asp-for="Asistencias" class="form-control" />
+        <span asp-validation-for="Asistencias" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Sueldo" class="control-label"></label>
+        <input asp-for="Sueldo" class="form-control" />
+        <span asp-validation-for="Sueldo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EquipoId" class="control-label"></label>
+        <select asp-for="EquipoId" class="form-control" asp-items="ViewBag.Equipos">
+            <option value="">Seleccione un equipo</option>
+        </select>
+        <span asp-validation-for="EquipoId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-3">
+        <input type="submit" value="Crear" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary ms-2">Volver al listado</a>
+    </div>
+</form>
