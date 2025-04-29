@@ -1,13 +1,15 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Andrade_LigaPro.Models
 {
     public class equipo
     {
         [Key]
-        [Display(Name = "")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // 👈 Esto indica que el Id será generado por la base de datos
         public int Id { get; set; }
+
         [Required]
         [MaxLength(100)]
         [DisplayName("Nombre del equipo")]
